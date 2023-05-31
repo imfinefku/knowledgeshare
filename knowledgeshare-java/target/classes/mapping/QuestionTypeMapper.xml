@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+    <!DOCTYPE mapper 
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xuezhabiji.dao.QuestionTypeDao">
+	<select id="getAll"
+		resultType="com.xuezhabiji.bean.QuestionType">
+		select id,title,addtime
+		from x_questiontype
+		order by addtime
+	</select>
+	<select id="getPage" parameterType="Map"
+		resultType="com.xuezhabiji.bean.QuestionType">
+		select id,title,addtime
+		from x_questiontype
+		order by addtime
+		limit
+		#{start},#{limit}
+	</select>
+	<select id="getPageCount" parameterType="Map"
+		resultType="Integer">
+		select count(*)
+		from x_questiontype
+	</select>
+	<select id="getKnowledgeByQuestiontypeidCount" resultType="Integer">
+		select count(*)
+		from x_knowledge
+		where questiontypeid=#{questiontypeid}
+	</select>
+	<select id="getQuestionByQuestiontypeidCount" resultType="Integer">
+		select count(*)
+		from x_question
+		where questiontypeid=#{questiontypeid}
+	</select>
+	<select id="getAllAndCount" resultType="com.xuezhabiji.bean.QuestionType">
+		select q.id,q.title,q.addtime,count(*) count
+		from x_questiontype q,x_knowledge k
+		where q.id=k.questiontypeid
+		group by q.id
+		order by q.addtime
+	</select>
+</mapper>

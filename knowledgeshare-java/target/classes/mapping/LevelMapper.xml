@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+    <!DOCTYPE mapper 
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xuezhabiji.dao.LevelDao">
+	<select id="getPage" resultType="com.xuezhabiji.bean.Level">
+		select id,code,name
+		from x_level
+		order by code
+		limit #{start},#{limit}
+	</select>
+	<select id="getPageCount" resultType="Integer">
+		select count(*)
+		from x_level
+	</select>
+
+	<select id="getAll" resultType="com.xuezhabiji.bean.Level">
+		select id,code,name
+		from x_level
+		order by code
+	</select>
+</mapper>

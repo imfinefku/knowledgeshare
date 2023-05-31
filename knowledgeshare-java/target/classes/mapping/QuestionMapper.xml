@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+    <!DOCTYPE mapper 
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xuezhabiji.dao.QuestionDao">
+	<select id="getPage" resultType="com.xuezhabiji.bean.Question">
+		select
+		q.id,q.title,q.type,q.questiontypeid,q.a,q.b,q.c,q.d,t.title as
+		questiontypetitle,q.answer,q.score,q.addtime,q.updatetime,q.image,q.analysis
+		from x_question
+		q,x_questiontype t
+		where q.questiontypeid=t.id
+		order by q.addtime desc
+		limit #{start},#{limit}
+	</select>
+	<select id="getPageCount" resultType="Integer">
+		select count(*)
+		from
+		x_question q,x_questiontype t
+		where q.questiontypeid=t.id
+	</select>
+	<select id="getAll" resultType="com.xuezhabiji.bean.Question">
+		select id,title,type,a,b,c,d,answer,image,analysis
+		from x_question
+	</select>
+</mapper>

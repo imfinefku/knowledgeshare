@@ -1,0 +1,23 @@
+2023-05-18 17:05:32.562  INFO 15120 --- [background-preinit] o.h.v.i.u.Version                        : HV000001: Hibernate Validator 6.1.7.Final
+2023-05-18 17:05:32.600  INFO 15120 --- [main] c.Application                            : Starting Application on LAPTOP-EFMDKSIQ with PID 15120 (D:\github\knowledgeshare\knowledgeshare-java\target\classes started by xuduo in D:\github\knowledgeshare\knowledgeshare-java)
+2023-05-18 17:05:32.611  INFO 15120 --- [main] c.Application                            : The following profiles are active: dev
+2023-05-18 17:05:35.394  INFO 15120 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 10000 (http)
+2023-05-18 17:05:35.396  INFO 15120 --- [main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-10000"]
+2023-05-18 17:05:35.396  INFO 15120 --- [main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2023-05-18 17:05:35.396  INFO 15120 --- [main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-05-18 17:05:35.510  INFO 15120 --- [main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2023-05-18 17:05:35.510  INFO 15120 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2857 ms
+2023-05-18 17:05:35.962  INFO 15120 --- [main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2023-05-18 17:05:36.032  INFO 15120 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-05-18 17:05:36.119  INFO 15120 --- [main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-10000"]
+2023-05-18 17:05:36.140  INFO 15120 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 10000 (http) with context path ''
+2023-05-18 17:05:36.149  INFO 15120 --- [main] c.Application                            : Started Application in 3.993 seconds (JVM running for 5.887)
+2023-05-18 17:05:36.165  INFO 15120 --- [main] c.z.h.HikariDataSource                   : DatebookHikariCP - Starting...
+2023-05-18 17:05:36.167  WARN 15120 --- [main] c.z.h.u.DriverDataSource                 : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-05-18 17:05:36.290  INFO 15120 --- [main] c.z.h.HikariDataSource                   : DatebookHikariCP - Start completed.
+2023-05-18 17:05:39.981  INFO 15120 --- [http-nio-10000-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-18 17:05:39.981  INFO 15120 --- [http-nio-10000-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2023-05-18 17:05:39.987  INFO 15120 --- [http-nio-10000-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 6 ms
+2023-05-18 17:09:42.107  INFO 15120 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-05-18 17:09:42.107  INFO 15120 --- [SpringContextShutdownHook] c.z.h.HikariDataSource                   : DatebookHikariCP - Shutdown initiated...
+2023-05-18 17:09:42.123  INFO 15120 --- [SpringContextShutdownHook] c.z.h.HikariDataSource                   : DatebookHikariCP - Shutdown completed.

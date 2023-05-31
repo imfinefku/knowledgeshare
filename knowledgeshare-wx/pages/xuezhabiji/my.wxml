@@ -1,0 +1,42 @@
+<!--pages/xuezhabiji/my.wxml-->
+<view style="background-color:{{blueColor}};width:100%;height:85px;color:white;border-top: 1px solid {{blueColor}};">
+  <view style="height:60px;width:60px;text-align:center;margin-top:10px;margin-left:20rpx;float:left;">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view style="height:60px;margin-top:10px;margin-left:20rpx;float:left;">
+    <view style="height:40px;line-height:20px;">
+      <open-data type="userNickName"></open-data>
+    </view>
+    <view style="height:30px;" bindtap="duanweimessage">
+      <view style="height:30px;float:left;margin-left:5px;font-size:12px;">{{curLevel}}</view>
+    </view>
+  </view>
+  <view style="float:right;height:60px;margin-top:10px;margin-right:50rpx;text-align:center;">
+    <view style="height:35px;line-height:20px;color:blue;">
+      <l-button disabled="{{buttonFlag}}" size="mini" shape="semicircle" bindtap="signIn" plain="true">{{buttonContent}}
+      </l-button>
+    </view>
+  </view>
+</view>
+<view style="font-size:40rpx;background-color:white;margin-top:25rpx;">
+  <view style="width:95%;margin-left:20rpx;margin-right:20rpx;" bindtap="toMyLike">
+    <l-list icon="favor" l-class-icon="iconfont" title="我的收藏" tag-content="{{likeNum}}" tagShape="circle"
+      tag-position="right" tag-color="{{blueColor}}" />
+  </view>
+  <view style="width:95%;margin-left:20rpx;margin-right:20rpx;">
+    <navigator url='my_problem'>
+      <l-list icon="warning" l-class-icon="iconfont" title="问题反馈" />
+    </navigator>
+  </view>
+  <view style="width:95%;margin-left:20rpx;margin-right:20rpx;">
+    <navigator url='my_relation'>
+      <l-list icon="customer-service" l-class-icon="iconfont" title="联系我们" />
+    </navigator>
+  </view>
+
+  <l-toast show="{{noLike}}" title="没有收藏知识点" />
+  <l-loading show="{{loadingFlag}}" opacity="0.5" type="change" full-screen="{{true}}"></l-loading>
+  <l-toast show="{{signSuccess}}" icon="success" title="{{toastMessage}}" />
+  <l-dialog show="{{signVideo}}" type="confirm" bind:linconfirm="lookVideo2" bind:lincancel="noLookVideo" title="签到成功"
+    content="签到成功" />
+</view>

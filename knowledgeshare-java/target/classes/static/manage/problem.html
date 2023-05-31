@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>用户反馈</title>
+<script src="/js/problem.js"></script>
+</head>
+<body>
+	<div style="padding: 10px;">
+		<div class="layui-row">
+			<div class="layui-col-md12">
+				<div class="layui-card">
+					<div class="layui-card-header">用户反馈</div>
+					<div class="layui-card-body">
+						<table id="grid" lay-filter="grid"></table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="layui-row" id="formbar" style="display: none;">
+		<div class="layui-col-md10">
+			<form class="layui-form" lay-filter="message">
+				<div class="layui-form-item"></div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">标题：</label>
+					<div class="layui-input-block">
+						<input id="title" type="text" name="title" lay-verify="title"
+							autocomplete="off" placeholder="请输入标题" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">时间：</label>
+					<div class="layui-input-block">
+						<input id="title" type="text" name="addtime" lay-verify="addtime"
+							autocomplete="off" placeholder="请输入时间" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">内容：</label>
+					<div class="layui-input-block">
+						<textarea placeholder="请输入内容" class="layui-textarea"
+							name="content" lay-verify="content"></textarea>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script type="text/html" id="tool">
+	<a class="layui-btn layui-btn-xs" lay-event="select">查看</a>
+</script>
+</body>
+</html>

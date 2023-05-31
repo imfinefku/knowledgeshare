@@ -1,0 +1,8 @@
+<!--pages/xuezhabiji/myLike.wxml-->
+<view wx:for="{{likeData}}" wx:key="id" wx:for-index="inIndex" wx:for-item="items"
+  style="background-color:white;">
+  <navigator style="margin-left:20rpx;margin-right:20rpx;"
+    url='myLikeContent?id={{items}}&title={{knowledgeContent[items].title}}'>
+    <l-list title="{{inIndex+1}}. {{knowledgeContent[items].title}}" />
+  </navigator>
+</view>

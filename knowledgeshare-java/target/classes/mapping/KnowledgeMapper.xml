@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+    <!DOCTYPE mapper 
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xuezhabiji.dao.KnowledgeDao">
+	<select id="getPage" resultType="com.xuezhabiji.bean.Knowledge">
+		select k.id,k.title,t.title as questiontypetitle,k.questiontypeid,k.content,k.addtime,k.updatetime,k.image
+		from x_knowledge k,x_questiontype t
+		where k.questiontypeid=t.id
+		order by addtime desc
+		limit #{start},#{limit}
+	</select>
+	<select id="getPageCount" resultType="Integer">
+		select count(*)
+		from x_knowledge k,x_questiontype t
+		where k.questiontypeid=t.id
+	</select>
+	<select id="getByQuestiontypeid" resultType="com.xuezhabiji.bean.Knowledge">
+		select id,title
+		from x_knowledge
+		where questiontypeid=#{questiontypeid}
+		order by addtime
+	</select>
+	<select id="getKnowledgeById" resultType="com.xuezhabiji.bean.Knowledge">
+		select id,title,content,image
+		from x_knowledge
+		where id=#{id}
+	</select>
+	<select id="getAll" resultType="com.xuezhabiji.bean.Knowledge">
+		select id,title,questiontypeid,content,image
+		from x_knowledge
+		order by questiontypeid,addtime
+	</select>
+</mapper>

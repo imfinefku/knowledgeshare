@@ -1,0 +1,4 @@
+/* pages/xuezhabiji/knowledge.wxss */
+page{
+  background-color: #eeeeee
+}

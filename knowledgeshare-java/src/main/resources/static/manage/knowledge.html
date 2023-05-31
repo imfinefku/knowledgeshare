@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>知识管理</title>
+<script src="/js/knowledge.js"></script>
+</head>
+<body>
+	<div style="padding: 10px;">
+		<div class="layui-row">
+			<div class="layui-col-md12">
+				<div class="layui-card">
+					<div class="layui-card-header">知识管理</div>
+					<div class="layui-card-body">
+						<table id="grid" lay-filter="grid"></table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="layui-row" id="formbar" style="display: none;">
+		<div class="layui-col-md10">
+			<form class="layui-form" lay-filter="message">
+				<div class="layui-form-item"></div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">题干：</label>
+					<div class="layui-input-block">
+						<input id="title" type="text" name="title" lay-verify="title"
+							autocomplete="off" placeholder="请输入题干" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">类别：</label>
+					<div class="layui-input-block">
+						<select name="questionType" lay-filter="questionType" id="questionType">
+						</select>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">配图：</label>
+					<div class="layui-input-block">
+						<img class="layui-inline" id="imageXs" width="50px" height="50px"
+							 src="/img/uploadBackground.png"
+							 style="border: 1px solid #8D8D8D; cursor: pointer;" />
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">答案：</label>
+					<div class="layui-input-block">
+						<textarea placeholder="请输入答案" class="layui-textarea"
+							name="content" lay-verify="content" id="content"></textarea>
+					</div>
+				</div>
+				<div class="layui-form-item" style="float: right;">
+					<button class="layui-btn layui-btn-sm" lay-submit=""
+						lay-filter="submitKnowledge">提交</button>
+					<button id="reset" class="layui-btn layui-btn-sm layui-btn-primary"
+						type="reset">重置</button>
+				</div>
+			</form>
+		</div>
+	</div>
+<script type="text/html" id="toolbar">
+  <div class="layui-btn-container">
+    <button class="layui-btn layui-btn-sm" lay-event="insert">添加知识</button>
+  </div>
+</script>
+	<script type="text/html" id="tool">
+	<a class="layui-btn layui-btn-xs" lay-event="update">修改</a>
+	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delete">删除</a>
+</script>
+</body>
+</html>

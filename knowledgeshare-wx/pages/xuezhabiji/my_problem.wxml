@@ -1,0 +1,8 @@
+<!--pages/xuezhabiji/my_problem.wxml-->
+<l-input label="标题"  placeholder="请输入标题" name ="title" bind:lininput ="titleInput"/>
+<l-textarea name ="content" placeholder="说说您的建议" maxlength="2000" bind:lininput ="contentInput" />
+<view style="margin:50rpx;justify-content: center;display:flex;">
+<l-button shape="semicircle" bg-color="{{blueColor}}" size="large" type="default" bindtap="submitProblem">提交</l-button>
+</view>
+<l-message />
+<l-loading class="l-container" show="{{loadingFlag}}" full-screen="{{true}}" opacity="0.5"/>

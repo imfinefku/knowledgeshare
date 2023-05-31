@@ -1,0 +1,49 @@
+<view style="width:100%;background-color:{{blueColor}};color:white">
+  <view style="width:100%;height:25rpx;text-align:left;font-size:15px;">
+  </view>
+  <l-search-bar placeholder="搜索知识点" bg-color="white" show-cancel="{{false}}" shape="circle" bindtap="toSearch">
+  </l-search-bar>
+  <view style="width:100%;height:30rpx;text-align:left;font-size:15px;">
+  </view>
+</view>
+
+<view style="margin-left:20rpx;margin-right:20rpx;">
+  <l-collapse type="accordion">
+    <view wx:for="{{dataList}}" wx:key="id" wx:for-index="outIndex"
+      style="margin-top:20rpx;background-color:white;border-radius:10px;margin-bottom:20rpx;box-shadow:2px 2px 2px rgba(0, 0, 0, 0.1)">
+      <l-collapse-item customTitle="{{true}}">
+        <!--自定义标题-->
+        <view class="title" slot="title" style="width:90%;margin-left:5%;margin-right:5%;">
+          <view class="ticket-detail-container" style="height:52px;">
+            <view style="line-height:52px;font-weight:600;float:left;">第{{outIndex+1}}章 {{item.title}}</view>
+            <l-icon name="down" size="25" color="#999" style="float:right;line-height:52px;" />
+            <view
+              style="float:right;margin-right:20rpx;background-color:{{blueColor}};width:40px;text-align:center;font-size:12px;border-radius:10px;color:white;height:20px;margin-top:16px;line-height:20px;">
+              {{questionDataList[item.id].length}}题
+            </view>
+          </view>
+        </view>
+        <view wx:for="{{questionDataList[item.id]}}" wx:key="id" wx:for-index="inIndex" wx:for-item="items"
+          style="background-color:white;">
+          <navigator style="margin-left:20rpx;margin-right:20rpx;"
+            url='knowledge_type_knowledge?id={{items.id}}&title={{items.title}}'>
+            <l-list title="{{inIndex+1}}. {{items.title}}" />
+          </navigator>
+        </view>
+      </l-collapse-item>
+    </view>
+  </l-collapse>
+</view>
+<l-popup show="{{showMine}}">
+  <view style="height:500px;width:300px;background:white;border-radius:10px;overflow:auto;" bindtap="closeMine">
+    <view style="width:100%;height30px;line-height:30px;margin-left:10px;">
+      <view>关闭</view>
+    </view>
+    <view style="margin-left:10px;margin-right:10px;margin-top:10px;line-height:30px;">
+      由于项目咨询的人过多,实在分身乏术，因此决定将提供有偿咨询服务。如果您在安装或者开发学习中遇到困难，可以联系本人提供有偿服务。</view>
+    <image src="../../images/my.jpg" style="height:130px;width:100px;" />
+    <view style="margin-left:10px;margin-right:10px;margin-top:10px;line-height:30px;">
+      如果本项目不适合你，没关系。关注本人公众号，里面还有更多开源项目等着你。</view>
+    <image src="../../images/gongzhonghao.jpg" style="height:100px;width:100px;" />
+  </view>
+</l-popup>

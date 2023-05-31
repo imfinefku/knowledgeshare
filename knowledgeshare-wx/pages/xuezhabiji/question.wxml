@@ -1,0 +1,12 @@
+<!--pages/xuezhabiji/question.wxml-->
+
+<view style="margin-left:20rpx;margin-bottom:20rpx;margin-right:20rpx;height:60px;border-radius:10px;margin-top:20rpx;background:white;font-size:14px;box-shadow:2px 2px 2px rgba(0, 0, 0, 0.1)"
+  wx:for="{{dataList}}" wx:key="id">
+    <view style="height:60px;line-height:60px;">
+      <view style="float:left;margin-left:15px;font-size:12px;color:green;width:50px;text-align:center;">{{item.levelname}}</view>
+      <view style="float:left;margin-left:20px;">{{item.title}}</view>
+      <view style="float:right;margin-right:20px;border: 1px solid {{blueColor}};width:60px;height:30px;margin-top:15px;line-height:30px;text-align:center;color:{{blueColor}};font-size:12px;border-radius:5px;">
+        <l-icon name="order" color="{{blueColor}}" size="25" style="float:left;margin-left:10px;"/>答题
+      </view>
+    </view>
+</view>

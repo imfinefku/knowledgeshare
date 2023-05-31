@@ -1,0 +1,9 @@
+<!--pages/xuezhabiji/my_relation.wxml-->
+<view style="top:20rpx;bottom:20rpx;left:20rpx;right:20rpx;background-color:white;position:absolute;">
+  <view style="margin-left:30rpx;margin-right:30rpx;">
+      本系统由Java十点半提供技术支持，如有项目问题，可以添加下方微信联系本人有偿解决。
+      <image style="height:260px;width:200px;" src="../../images/my.jpg" />
+      <view>也可以关注下方公众号，内有更多毕业设计项目</view>
+      <image style="height:200px;width:200px;" src="../../images/gongzhonghao.jpg" />
+  </view>
+</view>

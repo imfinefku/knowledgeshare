@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="/js/jquery-1.10.1.min.js"></script>
+<script src="/layui/layui.js"></script>
+<script src="/js/index.js"></script>
+<link rel="stylesheet" href="/layui/css/layui.css">
+<link rel="icon" href="/img/icon.png" type="image/x-icon" />
+<title>知识分享平台</title>
+
+</head>
+<body class="layui-layout-body">
+	<div class="layui-layout layui-layout-admin">
+		<div class="layui-header">
+			<div class="layui-logo">知识分享平台</div>
+			<!-- 头部区域（可配合layui已有的水平导航） -->
+			<ul class="layui-nav layui-layout-left" id="topMenu">
+			</ul>
+			<ul class="layui-nav layui-layout-right">
+				<li class="layui-nav-item"><a href="javascript:;"> <img
+						src="/manager.jpg" class="layui-nav-img"> <span
+						id="nickname"></span>
+				</a>
+					<dl class="layui-nav-child">
+						<dd>
+							<a href="javascript:updatePassword()">修改密码</a>
+						</dd>
+						<dd>
+							<a href="javascript:logout()">退出</a>
+						</dd>
+					</dl></li>
+			</ul>
+		</div>
+
+		<div class="layui-side layui-bg-black">
+			<div class="layui-side-scroll">
+				<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+				<ul class="layui-nav layui-nav-tree" id="leftTree">
+					<li class="layui-nav-item"><a href="javascript:loadContent('/manage/questionType.html');">知识类别</a></li>
+					<li class="layui-nav-item"><a href="javascript:loadContent('/manage/knowledge.html');">知识管理</a></li>
+					<li class="layui-nav-item"><a href="javascript:loadContent('/manage/question.html');">试题管理</a></li>
+					<li class="layui-nav-item"><a href="javascript:loadContent('/manage/exampaper.html');">试卷管理</a></li>
+					<li class="layui-nav-item"><a href="javascript:loadContent('/manage/level.html');">试卷级别</a></li>
+					<li class="layui-nav-item"><a href="javascript:loadContent('/manage/problem.html');">用户反馈</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="layui-body" id="content"
+			style="background-color: #f2f2f2;"></div>
+		<div class="layui-footer">
+			<!-- 底部固定区域 -->
+		</div>
+	</div>
+	<div class="layui-row" id="updatePs" style="display: none;">
+		<div class="layui-col-md10">
+			<form class="layui-form">
+				<div class="layui-form-item"></div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">旧密码：</label>
+					<div class="layui-input-block" style="margin-left: 115px;">
+						<input id="oldPassword" type="text" name="oldPassword"
+							lay-verify="oldPassword" autocomplete="off" placeholder="请输入旧密码"
+							class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">新密码：</label>
+					<div class="layui-input-block" style="margin-left: 115px;">
+						<input id="newPassword" type="password" name="newPassword"
+							lay-verify="newPassword" autocomplete="off" placeholder="请输入新密码"
+							class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label" style="width: 85px;">确认新密码：</label>
+					<div class="layui-input-block" style="margin-left: 115px;">
+						<input id="repeatNew" type="password" name="repeatNew"
+							lay-verify="repeatNew" autocomplete="off" placeholder="请再次输入新密码"
+							class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item" style="float: right;">
+					<button class="layui-btn layui-btn-sm" lay-submit=""
+						lay-filter="submitUpdatePs">提交</button>
+					<button id="reset" class="layui-btn layui-btn-sm layui-btn-primary"
+						type="reset">重置</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

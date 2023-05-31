@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+    <!DOCTYPE mapper 
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xuezhabiji.dao.ExampaperDao">
+	<select id="getPage" resultType="com.xuezhabiji.bean.Exampaper">
+		select
+		e.id,e.title,e.score,e.level,e.status,e.addtime,e.updatetime
+		from x_exampaper e, x_level l
+		where l.id=e.level
+		order by e.addtime desc
+		limit
+		#{start},#{limit}
+	</select>
+	<select id="getPageCount" resultType="Integer">
+		select count(*)
+		from x_exampaper
+	</select>
+	<select id="getSubByExampaperid" resultType="com.xuezhabiji.bean.ExampaperQuestion">
+		select e.id,e.exampaperid,e.questionid,e.orders,q.type
+		from x_exampaperquestion e
+		left join x_question q
+		on e.questionid=q.id
+		where e.exampaperid=#{exampaperid}
+		order by e.orders
+	</select>
+	<select id="initLevelExampaperList" resultType="Map">
+		select l.name levelname,e.id,e.title
+		from x_level l,x_exampaper e
+		where l.id=e.level
+		order by e.addtime desc
+	</select>
+	<select id="getExampaperSubById" resultType="com.xuezhabiji.bean.Question">
+		select q.title,q.a,q.b,q.c,q.d,q.answer,q.analysis,q.image,q.type,q.id
+		from x_exampaperquestion e,x_question q
+		where e.exampaperid=#{exampaperid}
+		and e.questionid=q.id
+		order by e.orders
+	</select>
+</mapper>

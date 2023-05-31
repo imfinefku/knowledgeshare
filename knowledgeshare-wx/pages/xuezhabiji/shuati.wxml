@@ -1,0 +1,2 @@
+<view style="width:100%;height:150px;text-align:center;line-height:150px;">随机抽取20道选择题进行答题</view>
+<l-button shape="semicircle" bg-color="{{blueColor}}" size="large" type="default" style="margin-left:10px;" bindtap="shuati">综合刷题</l-button>

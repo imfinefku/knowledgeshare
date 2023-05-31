@@ -1,0 +1,73 @@
+{
+  "pages": [
+    "pages/xuezhabiji/knowledge",
+    "pages/xuezhabiji/question",
+    "pages/xuezhabiji/knowledge_type_knowledge",
+    "pages/xuezhabiji/my",
+    "pages/xuezhabiji/my_relation",
+    "pages/xuezhabiji/my_problem",
+    "pages/xuezhabiji/searchPage",
+    "pages/xuezhabiji/myLike",
+    "pages/xuezhabiji/myLikeContent",
+    "pages/xuezhabiji/shuati"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3d82f5",
+    "navigationBarTitleText": "知识分享平台",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#06bd04",
+    "list": [
+      {
+        "pagePath": "pages/xuezhabiji/knowledge",
+        "text": "知识库",
+        "iconPath": "images/knowledge.png",
+        "selectedIconPath": "images/knowledge_on.png"
+      },
+      {
+        "pagePath": "pages/xuezhabiji/question",
+        "text": "试题库",
+        "iconPath": "images/question.png",
+        "selectedIconPath": "images/question_on.png"
+      },
+      {
+        "pagePath": "pages/xuezhabiji/shuati",
+        "text": "刷题",
+        "iconPath": "images/shuati.png",
+        "selectedIconPath": "images/shuati_on.png"
+      },
+      {
+        "pagePath": "pages/xuezhabiji/my",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my_on.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "l-list": "/dist/list/index",
+    "l-button": "/dist/button/index",
+    "l-textarea": "/dist/textarea/index",
+    "l-radio-group": "/dist/radio-group/index",
+    "l-radio": "/dist/radio/index",
+    "l-icon": "/dist/icon/index",
+    "l-input": "/dist/input/index",
+    "l-message": "/dist/message/index",
+    "l-loading": "/dist/loading/index",
+    "l-transition": "/dist/transition/index",
+    "l-collapse": "/dist/collapse/index",
+    "l-collapse-item": "/dist/collapse-item/index",
+    "l-tag": "/dist/tag/index",
+    "l-search-bar": "/dist/search-bar/index",
+    "l-dialog": "/dist/dialog/index",
+    "l-toast": "/dist/toast/index",
+    "l-progress": "/dist/progress/index",
+    "l-album": "/dist/album/index",
+    "l-popup": "/dist/popup/index"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

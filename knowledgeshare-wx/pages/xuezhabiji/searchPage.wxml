@@ -1,0 +1,42 @@
+<!--pages/xuezhabiji/searchPage.wxml-->
+<view style="width:100%;color:white">
+  <view style="width:100%;height:25rpx;text-align:left;font-size:15px;">
+  </view>
+  <view style="width:80%;float:left;">
+    <l-search-bar value="{{searchWord}}" placeholder="搜索知识点" bg-color="white" show-cancel="{{false}}" shape="circle"
+      bind:linchange="changeSearchWorld" bind:linclear="changeSearchWorld">
+    </l-search-bar>
+  </view>
+  <view style="width:20%;float:left;">
+    <l-button size="mini" shape="semicircle" bg-color="{{blueColor}}" bindtap="searchKnowledge">搜索</l-button>
+  </view>
+  <view style="width:100%;height:25rpx;float:left;">
+  </view>
+  <view style="width:100%;color:black;font-size:12px;padding-left:30rpx;padding-right:30rpx;font-weight:800;float:left;"
+    wx:if="{{showFlag}}">
+
+    <view style="width:100%;float:left;margin-top:20rpx;" wx:if="{{showHistoryFlag}}">
+      <view style="float:left;">搜索历史</view>
+      <view style="float:left;line-height:17px;margin-left:10px;">
+        <l-icon name="delete" size="25" bindtap="deleteHistory"/>
+      </view>
+    </view>
+    <l-dialog show="{{deleteHistoryFlag}}" type="confirm" show-title="{{false}}" content="确认删除所有历史记录？" bind:linconfirm="deleteHistoryTrue"/>
+    <view wx:for="{{historyData}}" wx:key="id" data-value="{{item}}"
+      style="font-weight:500;background-color:white;float:left;padding:10rpx;border-radius:5px;margin-right:20rpx;margin-top:20rpx;"
+      bindtap="searchHistory" wx:if="{{showHistoryFlag}}">
+      {{item}}
+    </view>
+  </view>
+  <view wx:for="{{searchData}}" wx:key="id" wx:for-index="inIndex" wx:for-item="items"
+    style="background-color:white;float:left;width:100%;">
+    <navigator style="margin-left:20rpx;margin-right:20rpx;"
+      url='knowledge_type_knowledge?id={{items.id}}&title={{items.title}}'>
+      <l-list title="{{inIndex+1}}. {{items.title}}" />
+    </navigator>
+  </view>
+  <view style="background-color:white;float:left;width:100%;color:black;text-align:center;font-size:13px;"
+    wx:if="{{noDataFlag}}">
+    未找到相关知识点
+  </view>
+</view>

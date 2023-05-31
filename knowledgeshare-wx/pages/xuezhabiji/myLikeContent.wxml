@@ -1,0 +1,27 @@
+<view style="width:100%;position:absolute;bottom:200px;top:20rpx;overflow:auto;">
+  <view style="text-align:left;margin-left:20rpx;margin-right:20rpx;font-size:35rpx;font-weight:bold;margin-top:20rpx;">
+    <text>{{title}}</text>
+  </view>
+  <view style="border-top:1rpx #989898 solid;margin-left:20rpx;margin-right:20rpx;margin-top:20rpx;"></view>
+  <view style="margin-top:20rpx;margin-left:20rpx;margin-right:20rpx;font-size:30rpx;color:{{blueColor}}">
+    <text>参考答案：</text>
+  </view>
+  <view
+    style="padding-bottom:20rpx;margin-top:20rpx;margin-left:20rpx;margin-right:20rpx;font-size:30rpx;line-height:28px;">
+    <text>{{content}}</text>
+  </view>
+</view>
+<view style="height:50px;line-height:50px;position:absolute;bottom:150px;width:100%;border-top:1rpx #989898 solid;">
+  <view style="float:left;width:30%;height:100%;">
+    <l-button style="margin-left:20rpx;display:{{lastshow}};" shape="semicircle" type="default" bindtap="toLast"
+      bg-color="{{blueColor}}">上一题</l-button>
+  </view>
+  <view style="float:left;width:40%;height:100%;text-align:center;">
+    <l-button bindtap="{{likeMethod}}" shape="semicircle" bg-color="{{blueColor}}">{{iflike}}</l-button>
+  </view>
+  <view style="float:left;width:30%;height:100%;">
+    <l-button style="margin-right:20rpx;float:right;display:{{nextshow}};" shape="semicircle" type="default"
+      bindtap="toNext" bg-color="{{blueColor}}">下一题</l-button>
+  </view>
+</view>
+<l-loading show="{{loadingFlag}}" opacity="0.5" type="change" full-screen="{{true}}"></l-loading>

@@ -1,0 +1,4 @@
+/* pages/xuezhabiji/my.wxss */
+page{
+  background-color: #eeeeee
+}

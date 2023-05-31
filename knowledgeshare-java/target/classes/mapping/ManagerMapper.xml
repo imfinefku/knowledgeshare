@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+    <!DOCTYPE mapper 
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xuezhabiji.dao.ManagerDao">
+	<select id="login" parameterType="com.xuezhabiji.bean.Manager"
+		resultType="com.xuezhabiji.bean.Manager">
+		select id,username,name
+		from x_manager
+		where username=#{username}
+		and
+		password=#{password}
+	</select>
+</mapper>

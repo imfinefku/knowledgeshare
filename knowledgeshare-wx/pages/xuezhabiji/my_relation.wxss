@@ -1,0 +1,4 @@
+/* pages/xuezhabiji/my_relation.wxss */
+page{
+  background-color: #eeeeee
+}

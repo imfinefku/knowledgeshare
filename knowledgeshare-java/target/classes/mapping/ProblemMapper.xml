@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+    <!DOCTYPE mapper 
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xuezhabiji.dao.ProblemDao">
+	<select id="getPage" parameterType="Map"
+		resultType="com.xuezhabiji.bean.Problem">
+		select id,title,content,addtime
+		from x_problem
+		limit
+		#{start},#{limit}
+	</select>
+	<select id="getPageCount" parameterType="Map"
+		resultType="Integer">
+		select count(*)
+		from x_problem
+	</select>
+</mapper>

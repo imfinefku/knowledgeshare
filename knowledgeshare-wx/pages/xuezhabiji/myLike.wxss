@@ -1,0 +1,4 @@
+/* pages/xuezhabiji/myLike.wxss */
+page{
+  background-color: #eeeeee
+}

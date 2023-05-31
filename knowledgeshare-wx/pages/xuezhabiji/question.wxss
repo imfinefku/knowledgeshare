@@ -1,0 +1,4 @@
+/* pages/xuezhabiji/question.wxss */
+page{
+  background-color: #eeeeee
+}

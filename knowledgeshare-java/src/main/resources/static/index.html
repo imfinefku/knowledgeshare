@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html style="width:100%;height:100%;background:url(/img/login.jpg);background-size:100% 100%;">
+<head>
+<meta charset="UTF-8">
+<script src="/js/jquery-1.10.1.min.js"></script>
+<link rel="icon" href="/img/icon.png" type="image/x-icon" />
+<script src="/layui/layui.js"></script>
+<link rel="stylesheet" href="/layui/css/layui.css">
+<title>login</title>
+</head>
+<body>
+<div style="width:300px;border-radius:10px;height:250px;text-align: center;margin: auto;margin-top: 200px;background: white;line-height: 50px;">
+	<div style="height: 20px;width: 100%;font-size: 20px;">知识分享平台</div>
+	<div style="margin-left:20px;margin-right:20px;margin-top:30px;">
+			<input id="username" type="username" name="username" lay-verify="username"
+				   autocomplete="off" placeholder="用户名" class="layui-input">
+	</div>
+	<div style="margin-left:20px;margin-right:20px;margin-top:20px;">
+			<input id="password" type="password" name="password" lay-verify="password"
+				   autocomplete="off" placeholder="密码" class="layui-input">
+	</div>
+	<div style="margin-left:20px;margin-right:20px;margin-top:20px;">
+		<button class="layui-btn layui-btn-normal" onclick="login()" style="width:260px;">登录</button>
+	</div>
+</div>
+
+</body>
+<script>
+	$(function() {
+		initLayui();
+	});
+
+	// 初始化layui
+	function initLayui() {
+		layui.use([ 'layer','form' ], function() {
+			form = layui.form;
+		});
+	}
+
+	function login() {
+		$.ajax({
+			url : "/manager/login",
+			type : "post",
+			contentType : 'application/json;charset=UTF-8',
+			dataType : "json",
+			data : JSON.stringify({
+				"username" : $("#username").val(),
+				"password" : $("#password").val()
+			}),
+			success : function(response) {
+				if (response.code == "200") {
+					window.location = "/manage/index.html";
+				} else {
+					alert(response.message);
+				}
+			},
+			error : function(error) {
+			}
+		});
+	}
+</script>
+</html>
+
