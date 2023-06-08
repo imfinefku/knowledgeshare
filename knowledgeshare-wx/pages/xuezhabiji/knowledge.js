@@ -23,42 +23,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
     wx.showLoading({
       title: '数据加载中',
-    })
-    wx.request({
-      url: app.globalData.apiUrl+"/open/getAllQuestionType",
-      method:"GET",
-      header:{
-        "content-type":"application/x-www-form-urlencoded"
-      },
-      data: {
-      },
-      success: function(response){
-        that.setData({
-          dataList:response.data.data,
-          blueColor:app.globalData.blueColor
-        })
-      }
-    })
-    wx.request({
-      url: app.globalData.apiUrl+"/open/getAllKnowledge",
-      method:"GET",
-      header:{
-        "content-type":"application/x-www-form-urlencoded"
-      },
-      data: {
-      },
-      success: function(response){
-        that.setData({
-          questionDataList:response.data.data,
-          blueColor:app.globalData.blueColor
-        })
-        wx.hideLoading({
-          success: (res) => {},
-        })
-      }
     })
   },
 

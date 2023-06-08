@@ -17,26 +17,6 @@ Page({
     wx.showLoading({
       title: '数据加载中',
     })
-    wx.request({
-      url: app.globalData.apiUrl+"/open/getAllExampaper",
-      method:"GET",
-      header:{
-        "content-type":"application/x-www-form-urlencoded"
-      },
-      data: {
-      },
-      success: function(response){
-        console.log(222);
-        console.log(response.data.data);
-        that.setData({
-          dataList:response.data.data,
-          blueColor:app.globalData.blueColor
-        })
-        wx.hideLoading({
-          success: (res) => {},
-        })
-      }
-    })
   },
 
   /**

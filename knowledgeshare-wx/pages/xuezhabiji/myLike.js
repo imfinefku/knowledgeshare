@@ -26,29 +26,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that = this;
-    var like = wx.getStorageSync("like");
-    if (like==null || like==""){
-      like=new Array();
-    }
-    wx.request({
-      url: app.globalData.apiUrl+"/open/getAllKnowledgeContent",
-      method:"GET",
-      header:{
-        "content-type":"application/x-www-form-urlencoded"
-      },
-      data: {
-      },
-      success: function(response){
-        that.setData({
-          likeData:like,
-          knowledgeContent:response.data.data
-        })
-        wx.hideLoading({
-          success: (res) => {},
-        })
-      }
-    })
   },
 
   /**
