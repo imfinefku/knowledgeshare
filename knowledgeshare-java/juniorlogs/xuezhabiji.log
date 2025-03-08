@@ -21,3 +21,123 @@
 2023-05-18 17:09:42.107  INFO 15120 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
 2023-05-18 17:09:42.107  INFO 15120 --- [SpringContextShutdownHook] c.z.h.HikariDataSource                   : DatebookHikariCP - Shutdown initiated...
 2023-05-18 17:09:42.123  INFO 15120 --- [SpringContextShutdownHook] c.z.h.HikariDataSource                   : DatebookHikariCP - Shutdown completed.
+2023-06-08 08:21:34.358  INFO 20172 --- [background-preinit] o.h.v.i.u.Version                        : HV000001: Hibernate Validator 6.1.7.Final
+2023-06-08 08:21:34.395  INFO 20172 --- [main] c.Application                            : Starting Application on LAPTOP-EFMDKSIQ with PID 20172 (D:\github\knowledgeshare\knowledgeshare-java\target\classes started by xuduo in D:\github\knowledgeshare\knowledgeshare-java)
+2023-06-08 08:21:34.395  INFO 20172 --- [main] c.Application                            : The following profiles are active: dev
+2023-06-08 08:21:36.949  INFO 20172 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 10000 (http)
+2023-06-08 08:21:36.964  INFO 20172 --- [main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-10000"]
+2023-06-08 08:21:36.964  INFO 20172 --- [main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2023-06-08 08:21:36.964  INFO 20172 --- [main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-06-08 08:21:37.074  INFO 20172 --- [main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2023-06-08 08:21:37.074  INFO 20172 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2632 ms
+2023-06-08 08:21:37.449  INFO 20172 --- [main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-08 08:21:37.527  INFO 20172 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-06-08 08:21:37.605  INFO 20172 --- [main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-10000"]
+2023-06-08 08:21:37.636  INFO 20172 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 10000 (http) with context path ''
+2023-06-08 08:21:37.636  INFO 20172 --- [main] c.Application                            : Started Application in 3.62 seconds (JVM running for 4.844)
+2023-06-08 08:21:37.652  INFO 20172 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-08 08:21:37.668 ERROR 20172 --- [main] o.s.b.SpringApplication                  : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:795) [spring-boot-2.3.12.RELEASE.jar:2.3.12.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:776) [spring-boot-2.3.12.RELEASE.jar:2.3.12.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319) [spring-boot-2.3.12.RELEASE.jar:2.3.12.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1247) [spring-boot-2.3.12.RELEASE.jar:2.3.12.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1236) [spring-boot-2.3.12.RELEASE.jar:2.3.12.RELEASE]
+	at com.Application.main(Application.java:15) [classes/:?]
+Caused by: org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.xuezhabiji.dao.QuestionTypeDao.getAllAndCount
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:227) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:49) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.cachedMapperMethod(MapperProxy.java:65) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:58) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy78.getAllAndCount(Unknown Source) ~[?:?]
+	at com.xuezhabiji.service.QuestionTypeService.getAllAndCount(QuestionTypeService.java:37) ~[classes/:?]
+	at com.xuezhabiji.common.CommonCache.initQuestionType(CommonCache.java:73) ~[classes/:?]
+	at com.xuezhabiji.common.CommonCache.initAll(CommonCache.java:62) ~[classes/:?]
+	at com.xuezhabiji.common.CommonCache.run(CommonCache.java:58) ~[classes/:?]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:792) ~[spring-boot-2.3.12.RELEASE.jar:2.3.12.RELEASE]
+	... 5 more
+
+2023-06-08 08:21:37.820  INFO 20172 --- [main] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-08 08:22:09.415  INFO 36968 --- [background-preinit] o.h.v.i.u.Version                        : HV000001: Hibernate Validator 6.1.7.Final
+2023-06-08 08:22:09.446  INFO 36968 --- [main] c.Application                            : Starting Application on LAPTOP-EFMDKSIQ with PID 36968 (D:\github\knowledgeshare\knowledgeshare-java\target\classes started by xuduo in D:\github\knowledgeshare\knowledgeshare-java)
+2023-06-08 08:22:09.446  INFO 36968 --- [main] c.Application                            : The following profiles are active: dev
+2023-06-08 08:22:11.790  INFO 36968 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 10000 (http)
+2023-06-08 08:22:11.790  INFO 36968 --- [main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-10000"]
+2023-06-08 08:22:11.790  INFO 36968 --- [main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2023-06-08 08:22:11.790  INFO 36968 --- [main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-06-08 08:22:11.899  INFO 36968 --- [main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2023-06-08 08:22:11.899  INFO 36968 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2422 ms
+2023-06-08 08:22:12.243  INFO 36968 --- [main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-08 08:22:12.321  INFO 36968 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-06-08 08:22:12.399  INFO 36968 --- [main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-10000"]
+2023-06-08 08:22:12.415  INFO 36968 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 10000 (http) with context path ''
+2023-06-08 08:22:12.430  INFO 36968 --- [main] c.Application                            : Started Application in 3.299 seconds (JVM running for 4.338)
+2023-06-08 08:22:12.430  INFO 36968 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-08 08:22:12.446 ERROR 36968 --- [main] o.s.b.SpringApplication                  : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:795) [spring-boot-2.3.12.RELEASE.jar:2.3.12.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:776) [spring-boot-2.3.12.RELEASE.jar:2.3.12.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319) [spring-boot-2.3.12.RELEASE.jar:2.3.12.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1247) [spring-boot-2.3.12.RELEASE.jar:2.3.12.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1236) [spring-boot-2.3.12.RELEASE.jar:2.3.12.RELEASE]
+	at com.Application.main(Application.java:15) [classes/:?]
+Caused by: org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.xuezhabiji.dao.QuestionTypeDao.getAllAndCount
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:227) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:49) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.cachedMapperMethod(MapperProxy.java:65) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:58) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy78.getAllAndCount(Unknown Source) ~[?:?]
+	at com.xuezhabiji.service.QuestionTypeService.getAllAndCount(QuestionTypeService.java:37) ~[classes/:?]
+	at com.xuezhabiji.common.CommonCache.initQuestionType(CommonCache.java:73) ~[classes/:?]
+	at com.xuezhabiji.common.CommonCache.initAll(CommonCache.java:62) ~[classes/:?]
+	at com.xuezhabiji.common.CommonCache.run(CommonCache.java:58) ~[classes/:?]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:792) ~[spring-boot-2.3.12.RELEASE.jar:2.3.12.RELEASE]
+	... 5 more
+
+2023-06-08 08:22:12.597  INFO 36968 --- [main] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-06-08 09:45:01.622  INFO 13416 --- [background-preinit] o.h.v.i.u.Version                        : HV000001: Hibernate Validator 6.1.7.Final
+2023-06-08 09:45:01.669  INFO 13416 --- [main] c.Application                            : Starting Application on LAPTOP-EFMDKSIQ with PID 13416 (D:\github\knowledgeshare\knowledgeshare-java\target\classes started by xuduo in D:\github\knowledgeshare\knowledgeshare-java)
+2023-06-08 09:45:01.669  INFO 13416 --- [main] c.Application                            : The following profiles are active: dev
+2023-06-08 09:45:04.178  INFO 13416 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 10000 (http)
+2023-06-08 09:45:04.194  INFO 13416 --- [main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-10000"]
+2023-06-08 09:45:04.194  INFO 13416 --- [main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2023-06-08 09:45:04.194  INFO 13416 --- [main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-06-08 09:45:04.428  INFO 13416 --- [main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2023-06-08 09:45:04.428  INFO 13416 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2728 ms
+2023-06-08 09:45:04.819  INFO 13416 --- [main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2023-06-08 09:45:04.881  INFO 13416 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-06-08 09:45:04.959  INFO 13416 --- [main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-10000"]
+2023-06-08 09:45:04.991  INFO 13416 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 10000 (http) with context path ''
+2023-06-08 09:45:04.991  INFO 13416 --- [main] c.Application                            : Started Application in 3.669 seconds (JVM running for 5.318)
+2023-06-08 09:45:05.006  INFO 13416 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-08 09:45:05.022 ERROR 13416 --- [main] o.s.b.SpringApplication                  : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:795) [spring-boot-2.3.12.RELEASE.jar:2.3.12.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:776) [spring-boot-2.3.12.RELEASE.jar:2.3.12.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319) [spring-boot-2.3.12.RELEASE.jar:2.3.12.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1247) [spring-boot-2.3.12.RELEASE.jar:2.3.12.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1236) [spring-boot-2.3.12.RELEASE.jar:2.3.12.RELEASE]
+	at com.Application.main(Application.java:15) [classes/:?]
+Caused by: org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.xuezhabiji.dao.QuestionTypeDao.getAllAndCount
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:227) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:49) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.cachedMapperMethod(MapperProxy.java:65) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:58) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy78.getAllAndCount(Unknown Source) ~[?:?]
+	at com.xuezhabiji.service.QuestionTypeService.getAllAndCount(QuestionTypeService.java:37) ~[classes/:?]
+	at com.xuezhabiji.common.CommonCache.initQuestionType(CommonCache.java:73) ~[classes/:?]
+	at com.xuezhabiji.common.CommonCache.initAll(CommonCache.java:62) ~[classes/:?]
+	at com.xuezhabiji.common.CommonCache.run(CommonCache.java:58) ~[classes/:?]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:792) ~[spring-boot-2.3.12.RELEASE.jar:2.3.12.RELEASE]
+	... 5 more
+
+2023-06-08 09:45:05.204  INFO 13416 --- [main] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
